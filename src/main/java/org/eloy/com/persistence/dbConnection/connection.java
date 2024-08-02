@@ -1,5 +1,7 @@
 package org.eloy.com.persistence.dbConnection;
 
+import java.sql.DriverManager;
+
 public class connection {
 
     public static java.sql.Connection connection = null;
@@ -18,7 +20,7 @@ public class connection {
         try {
             connection = DriverManager.getConnection(URL,user,password);
             System.out.println("Connexion exitosa");
-        }catch (Exception e){
+        } catch (Exception e){
             System.out.println("No fue posible establecer conexion con la base de datos" +e.getMessage());
         }
         return connection;
@@ -26,7 +28,7 @@ public class connection {
 
     //Close connection
 
-    piblic static void close(){
+    public static void close(){
         if (connection != null){
 
             //Try close connection
